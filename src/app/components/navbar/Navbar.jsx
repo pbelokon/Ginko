@@ -12,10 +12,8 @@ export default function Navbar() {
       <nav className={styles.nav}>
         <ul>
           <li>Home</li>
-          <li>Expenses</li>
-          <li>Budget</li>
-          <li>Goals</li>
-          <li>Tips</li>
+          <li>Reports</li>
+          <li>Learn</li>
         </ul>
 
         <button>login</button>
