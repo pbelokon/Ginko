@@ -5,7 +5,9 @@ import useServerDarkMode from "@/hooks/useServerDarkMode";
 export default function PageHeader({ className }) {
   const theme = useServerDarkMode();
   return (
-    <header className={`flex justify-between items-center ${className}`}>
+    <header
+      className={`flex justify-between items-center ${className} dark:text-white`}
+    >
       <Link
         href="/dashboard"
         className="text-xl hover:underline underline-offset-8 decoration-2"

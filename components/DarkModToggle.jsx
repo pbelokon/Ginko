@@ -5,7 +5,7 @@ import Sun from "@/icons/Sun";
 import Moon from "@/icons/Moon";
 import Button from "./Button";
 
-export default function DarkModeToggle({ defaultMode = "dark" }) {
+export default function DarkModeToggle({ defaultMode = "light" }) {
   const { theme, toggleTheme } = useDarkMode(defaultMode);
 
   return (

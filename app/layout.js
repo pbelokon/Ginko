@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const theme = useServerDarkMode();
   return (
-    <html lang="en" className={theme}>
+    <html lang="en" className={`${theme} dark:text-white`}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
