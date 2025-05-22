@@ -5,7 +5,9 @@ export default function Layout({ children }) {
     <>
       <PageHeader className="my-8" />
       <main className="dark:text-white">{children}</main>
-      <footer className="dark:text-white">Footer</footer>
+      <footer className="dark:text-white mt-auto text-center py-8">
+        Footer
+      </footer>
     </>
   );
 }

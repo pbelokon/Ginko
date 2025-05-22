@@ -1,3 +1,9 @@
+import TransactionList from "./components/TransactionList";
+
 export default function Page() {
-  return <>Hello from dashboard</>;
+  return (
+    <>
+      <TransactionList />
+    </>
+  );
 }
