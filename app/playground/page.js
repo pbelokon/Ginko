@@ -1,17 +1,20 @@
 import PageHeader from "@/components/PageHeader";
+import Trend from "@/components/Trend";
 import TransactionItem from "@/components/TransactionItem";
 import TransactionSummary from "@/components/TransactionSummary";
-import Trend from "@/components/Trend";
+import Button from "@/components/Button";
+import Input from "@/components/inputs/Input";
+import Label from "@/components/inputs/Label";
+import Select from "@/components/inputs/Select";
 
-export default function page() {
+export default function Page() {
   return (
-    <main className="space-y-8">
+    <main className="space-y-8 mb-44 dark:text-white">
       <h1 className="text-4xl mt-8">Playground</h1>
 
       <div>
-        <h2 className="mb-4 text-lg font-mono">Page Header</h2>
+        <h2 className="mb-4 text-lg font-mono">PageHeader</h2>
         <hr className="mb-4 border-gray-200 dark:border-gray-800" />
-
         <div>
           <PageHeader />
         </div>
@@ -20,21 +23,104 @@ export default function page() {
       <div>
         <h2 className="mb-4 text-lg font-mono">Trend</h2>
         <hr className="mb-4 border-gray-200 dark:border-gray-800" />
-
         <div className="flex space-x-8">
-          <Trend type="Income" amount={30000000} prevAmount={200000} />
-          <Trend type="Investment" amount={100000} prevAmount={100} />
-          <Trend type="Expense" amount={1000} prevAmount={2000} />
-          <Trend type="Saving" amount={7000} prevAmount={8000} />
+          <Trend type="Income" amount={1000} prevAmount={900} />
+          <Trend type="Expense" amount={12000} prevAmount={10000} />
+          <Trend type="Investment" amount={7000} prevAmount={11100} />
+          <Trend type="Saving" amount={500} prevAmount={950} />
         </div>
       </div>
 
       <div>
-        <h2 className="mb-4 text-lg font-mono">Transaction Summary</h2>
+        <h2 className="mb-4 text-lg font-mono">TransactionItem</h2>
         <hr className="mb-4 border-gray-200 dark:border-gray-800" />
-
         <div className="space-y-4">
-          <TransactionSummary date={"2025-5-21"} amount={800} />
+          <TransactionItem type="Income" description="Salary" amount={2000} />
+          <TransactionItem
+            type="Expense"
+            category="Food"
+            description="Going out to eat"
+            amount={29}
+          />
+          <TransactionItem
+            type="Saving"
+            description="For children"
+            amount={500}
+          />
+          <TransactionItem
+            type="Investment"
+            description="In Microsoft"
+            amount={9000}
+          />
+        </div>
+      </div>
+
+      <div>
+        <h2 className="mb-4 text-lg font-mono">
+          TransactionSummaryItem + TransactionItem
+        </h2>
+        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <div className="space-y-4">
+          <TransactionSummary date="2024-05-01" amount={3500} />
+          <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+          <TransactionItem type="Income" description="Salary" amount={2000} />
+          <TransactionItem
+            type="Expense"
+            category="Food"
+            description="Going out to eat"
+            amount={29}
+          />
+          <TransactionItem
+            type="Saving"
+            description="For children"
+            amount={500}
+          />
+          <TransactionItem
+            type="Investment"
+            description="In Microsoft"
+            amount={9000}
+          />
+        </div>
+      </div>
+
+      <div>
+        <h2 className="mb-4 text-lg font-mono">Buttons</h2>
+        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <div className="space-x-4">
+          <Button>Hello</Button>
+          <Button variant="outline">Hello</Button>
+          <Button variant="ghost">Hello</Button>
+
+          <Button size="xs">Hello</Button>
+          <Button size="sm">Hello</Button>
+          <Button size="lg">Hello</Button>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="mb-4 text-lg font-mono">Forms</h2>
+        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label className="mb-1">Your name</Label>
+            <Input type="text" placeholder="Type something in here..." />
+          </div>
+
+          <div>
+            <Label className="mb-1">City</Label>
+            <Select>
+              <option>Warsaw</option>
+              <option>Berlin</option>
+              <option>London</option>
+            </Select>
+          </div>
+
+          <div className="flex items-center">
+            <Input type="checkbox" id="terms" />
+            <Label className="ml-2" htmlFor="terms">
+              Accept terms
+            </Label>
+          </div>
         </div>
       </div>
     </main>

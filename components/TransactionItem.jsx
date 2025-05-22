@@ -29,7 +29,6 @@ export default function TransactionItem({
     },
   };
 
-  console.log(type, typeMap[type].icon);
   const IconComponent = typeMap[type].icon;
   const colors = typeMap[type].colors;
   const formattedAmount = useCurrencyFormat(amount);
