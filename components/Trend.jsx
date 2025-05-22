@@ -1,3 +1,8 @@
+import { useMemo } from "react";
+import Down from "@/icons/Down";
+import Up from "@/icons/Up";
+
+import { useCurrencyFormat } from "@/hooks/useCurrencyFormat";
 export default function Trend({ type, amount, prevAmount }) {
   const colorClasses = {
     Income: "text-green-700 dark:text-green-300",
@@ -7,22 +12,32 @@ export default function Trend({ type, amount, prevAmount }) {
   };
 
   const calcChange = (amount, prevAmount) => {
-    if (prevAmount === 0) return 0;
+    if (!prevAmount || !amount) return 0;
 
     return ((amount - prevAmount) / prevAmount) * 100;
   };
 
-  const currencyFormat = (amount) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "CND",
-    }).format(amount);
-  };
+  const percentageChange = useMemo(
+    () => calcChange(amount, prevAmount).toFixed(0),
+    [amount, prevAmount]
+  );
+
+  const formattedAmount = useCurrencyFormat(amount);
+
   return (
     <div>
       <div className={`font-semibold ${colorClasses[type]}`}>{type}</div>
       <div className="text-2xl font-semibold text-black dark:text-white mb-2">
-        {amount ? currencyFormat(amount) : currencyFormat(0)}
+        {formattedAmount}
+      </div>
+      <div className="flex space-x-1 items-center text-sm">
+        {percentageChange <= 0 && (
+          <Down className="w-6 h-6 text-red-700 dark:text-red-300" />
+        )}
+        {percentageChange > 0 && (
+          <Up className="w-6 h-6 text-green-700 dark:text-green-300" />
+        )}
+        <div>{percentageChange} % vs last period</div>
       </div>
     </div>
   );
