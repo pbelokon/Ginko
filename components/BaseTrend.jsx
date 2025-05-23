@@ -3,7 +3,7 @@ import Down from "@/icons/Down";
 import Up from "@/icons/Up";
 
 import { useCurrencyFormat } from "@/hooks/useCurrencyFormat";
-export default function Trend({ type, amount, prevAmount }) {
+export default function BaseTrend({ type, amount, prevAmount }) {
   const colorClasses = {
     Income: "text-green-700 dark:text-green-300",
     Expense: "text-red-700 dark:text-red-300",
