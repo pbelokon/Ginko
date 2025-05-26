@@ -1,4 +1,4 @@
-import BaseTrend from "@/components/BaseTrend";
+import BaseTrend from "./BaseTrend";
 
 export default async function Trend({ type }) {
   const response = await fetch(`http://localhost:3100/trends/${type}`);

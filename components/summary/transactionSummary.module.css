@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  font-weight: 600;
+  color: var(--gray-dark);
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  align-items: center;
+}
+
+.date {
+  flex-grow: 1;
+}
+
+.amount {
+  min-width: 100px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.spacer {
+  min-width: 60px;
+}

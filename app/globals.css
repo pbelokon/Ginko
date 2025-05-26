@@ -1,6 +1,106 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/forms";
-@custom-variant dark (&:where(.dark, .dark *));
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
 body {
-  @apply container mx-auto max-w-4xl container  bg-white text-black dark:bg-slate-950;
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+main {
+  max-width: 1660px;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Colors*/
+:root {
+  --blue-dark: oklch(70.7% 0.165 254.624);
+  --blue-light: oklch(82.8% 0.111 230.318);
+  --red-dark: oklch(70.4% 0.191 22.216);
+  --red-light: oklch(80.8% 0.114 19.571);
+  --yellow-dark: oklch(82.8% 0.189 84.429);
+  --yellow-light: oklch(90.5% 0.182 98.111);
+  --green-dark: oklch(79.2% 0.209 151.711);
+  --green-light: oklch(87.1% 0.15 154.449);
+  --gray-dark: oklch(60% 0.05 254.604);
+  --gray-light: oklch(90% 0.01 254.604);
+}
+
+body {
+  background-color: oklch(97% 0.014 254.604);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
 }

@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  font-size: 1.6rem;
+  flex-direction: column;
+}
+
+.type {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.amount {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: oklch(0% 0 0);
+  margin-bottom: 0.5rem;
+}
+
+.trend {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.income {
+  color: var(--green-dark);
+}
+
+.expense {
+  color: var(--red-dark);
+}
+
+.investment {
+  color: var(--blue-dark);
+}
+
+.saving {
+  color: var(--yellow-dark);
+}
+
+.upIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--green-dark);
+}
+
+.downIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--red-dark);
+}

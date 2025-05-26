@@ -1,14 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
-import useServerDarkMode from "@/hooks/useServerDarkMode";
+import Header from "@/components/header/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
   subsets: ["latin"],
 });
 
@@ -18,12 +12,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const theme = useServerDarkMode();
   return (
-    <html lang="en" className={`${theme} dark:text-white`}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col px-8`}
-      >
+    <html lang="en">
+      <body className={roboto.className}>
+        <Header />
         {children}
       </body>
     </html>
